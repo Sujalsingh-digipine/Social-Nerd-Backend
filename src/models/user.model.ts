@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { UserStatus } from "../enums/UserStatus";
+import { UserStatus } from "../enums/UserStatusEnum";
 import { User } from "../types/UserType";
 
 const UserSchema = new Schema<User>(

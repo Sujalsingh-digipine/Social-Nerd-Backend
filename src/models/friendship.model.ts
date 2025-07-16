@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { Friendship } from "../types/FriendshipType";
-import { FriendshipStatus } from "../enums/Friend";
+import { FriendshipStatus } from "../enums/FriendEnum";
 
 export const FriendShipSchema = new Schema<Friendship>(
   {

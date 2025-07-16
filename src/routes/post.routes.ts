@@ -6,9 +6,8 @@ import {
   getPostsController,
   updatePostController,
 } from "../controllers/post.controller";
-import { authenticate } from "../middlewares/auth-user";
+import { authenticate } from "../middlewares/auth-user.middleware";
 
-// test comment
 export const postRouter = express.Router();
 postRouter.post("/", authenticate, createPostController);
 postRouter.get("/", getPostsController);
