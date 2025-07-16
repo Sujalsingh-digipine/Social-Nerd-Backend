@@ -1,4 +1,4 @@
-export enum MessageType {
+export enum Message {
   Text = "Text",
   Image = "Image",
   Video = "Video",

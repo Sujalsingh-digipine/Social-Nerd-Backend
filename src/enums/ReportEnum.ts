@@ -1,4 +1,4 @@
-export enum ReportType {
+export enum Report {
   spam = "spam",
   other = "other",
 }

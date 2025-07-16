@@ -24,3 +24,8 @@ export const FriendShipSchema = new Schema<Friendship>(
     timestamps: { createdAt: true, updatedAt: false },
   }
 );
+
+export const FriendshipModel = mongoose.model<Friendship>(
+  "Friendship",
+  FriendShipSchema
+);

@@ -5,6 +5,7 @@ import { Request, Response, NextFunction } from "express";
 
 export interface AuthenticatedRequest extends Request {
   user?: string;
+  userRole?: string[];
 }
 
 export const authenticate = (
@@ -22,7 +23,6 @@ export const authenticate = (
     });
   }
 
-  
   const [bearer, token] = authHeader.split(" ");
 
   if (bearer !== "Bearer" || !token) {
@@ -34,11 +34,12 @@ export const authenticate = (
   }
 
   try {
-    const decode = _verifyToken(token); 
+    const decode = _verifyToken(token);
     req.user = decode.id;
+    req.userRole = decode.roles;
     next();
-    console.log("Decoded Token:", decode);
-
+    // console.log("Decoded Token:", decode);
+    console.log(decode.roles);
   } catch (error: any) {
     return response(res, HttpStatus.UNAUTHORIZED, {
       message: "Invalid Token",
