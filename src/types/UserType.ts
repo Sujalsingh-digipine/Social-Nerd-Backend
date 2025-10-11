@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { UserStatus } from "../enums/UserStatus";
+import { UserStatus } from "../enums/UserStatusEnum";
 
 export interface User {
   _id: string;

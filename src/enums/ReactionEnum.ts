@@ -1,4 +1,4 @@
-export enum ReactionType {
+export enum ReactionEnum {
   Like = "Like",
   Love = "Love",
   Haha = "Haha",

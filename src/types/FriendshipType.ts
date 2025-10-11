@@ -1,4 +1,4 @@
-import { FriendshipStatus } from "../enums/Friend";
+import { FriendshipStatus } from "../enums/FriendEnum";
 import { User } from "./UserType";
 
 export interface Friendship {

@@ -1,4 +1,4 @@
-import { ReactionType } from "../enums/ReactionType";
+import { ReactionType } from "../enums/ReactionEnum";
 import { Post } from "./PostType";
 import { User } from "./UserType";
 

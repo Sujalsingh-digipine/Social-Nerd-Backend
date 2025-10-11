@@ -6,8 +6,8 @@ import { postRouter } from "./routes/post.routes";
 import "./models/user.model";
 import "./models/post.model";
 import "./models/comment.model";
-import "./models/reaction.model"; 
-
+import "./models/reaction.model";
+import { friendRouter } from "./routes/frienship.routes";
 
 const app: Express = express();
 const port = 8080;
@@ -25,6 +25,7 @@ app.use(
 
 app.use("/api/auth", userRouter);
 app.use("/api/post", postRouter);
+app.use("/api/friend-request", friendRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -11,6 +11,7 @@ import { Request, Response } from "express";
 import { UserModel } from "../models/user.model";
 import { _comparePassword } from "../utils/Auth/hasher";
 import { _generateToken } from "../utils/Auth/token.helper";
+// import { Roles } from "../enums/Roles.Enum";
 
 export const userController = async (req: Request, res: Response) => {
   try {
@@ -172,7 +173,7 @@ export const loginController = async (req: Request, res: Response) => {
       });
     }
 
-    const payload = { id: exisitingUser._id };
+    const payload = { id: exisitingUser._id, roles: exisitingUser.roles };
     const token = _generateToken(payload);
     console.log(exisitingUser.username);
     return response(res, HttpStatus.OK, {
@@ -183,6 +184,7 @@ export const loginController = async (req: Request, res: Response) => {
           id: exisitingUser._id,
           name: exisitingUser.username,
           email: exisitingUser.email,
+          roles: exisitingUser.roles,
         },
       },
       success: true,

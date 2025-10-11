@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { Reaction } from "../types/ReactionType";
-import { ReactionType } from "../enums/ReactionType";
+import { ReactionEnum } from "../enums/ReactionEnum";
 
 const ReactionSchema = new Schema<Reaction>(
   {
@@ -17,7 +17,7 @@ const ReactionSchema = new Schema<Reaction>(
     reactionType: {
       type: String,
       required: true,
-      enum: Object.values(ReactionType),
+      enum: Object.values(ReactionEnum),
     },
   },
   {
@@ -28,4 +28,7 @@ const ReactionSchema = new Schema<Reaction>(
   }
 );
 
-export const ReactionModel = mongoose.model<Reaction>("Reaction", ReactionSchema);
+export const ReactionModel = mongoose.model<Reaction>(
+  "Reaction",
+  ReactionSchema
+);

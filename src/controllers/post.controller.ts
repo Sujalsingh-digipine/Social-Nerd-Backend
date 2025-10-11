@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthenticatedRequest } from "../middlewares/auth-user";
+import { AuthenticatedRequest } from "../middlewares/auth-user.middleware";
 import { response } from "../utils/response";
 import { HttpStatus } from "../utils/http-status";
 import {
@@ -17,8 +17,6 @@ export const createPostController = async (
   try {
     const { caption, images, video } = req.body;
     const userId = req.user;
-    console.log(userId);
-    console.log("req.user:", req.user);
 
     if (!caption && images.length === 0 && !video) {
       return response(res, HttpStatus.BAD_REQUEST, {

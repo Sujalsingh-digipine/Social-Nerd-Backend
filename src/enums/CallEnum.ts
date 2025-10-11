@@ -1,4 +1,4 @@
-export enum CallType {
+export enum Call {
   voice = "Voice",
   video = "Video",
 }

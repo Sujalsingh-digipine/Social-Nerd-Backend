@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
-import { UserStatus } from "../enums/UserStatus";
+import { UserStatus } from "../enums/UserStatusEnum";
 import { User } from "../types/UserType";
+import { Roles } from "../enums/Roles.Enum";
 
 const UserSchema = new Schema<User>(
   {
@@ -29,6 +30,8 @@ const UserSchema = new Schema<User>(
     },
     roles: {
       type: [String],
+      enum: Object.values(Roles),
+      default: [Roles.User],
       required: true,
     },
     status: {

@@ -1,4 +1,4 @@
-import { MessageType } from "../enums/TextType";
+import { MessageType } from "../enums/TextEnum";
 import { ChatRoom } from "./ChatRoomType";
 
 export interface Message {
